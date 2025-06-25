@@ -1,11 +1,18 @@
 <script lang="ts" setup>
-const { name } = defineProps<{ name: string }>();
+import { useProfileStore } from '@/stores/profile.store';
+import { onMounted } from 'vue';
+
+const store = useProfileStore();
+
+onMounted(() => {
+  store.fetchProfile();
+});
 </script>
 <template>
-  <div class="avatar">
+  <div class="avatar" v-if="store.profile">
     <img class="avatar_img" src="/public/avatar.png" />
     <div class="avatar_text">
-      Hello, <span>{{ name }}!</span>
+      Hello, <span>{{ store.profile.name }}!</span>
     </div>
   </div>
 </template>
@@ -13,7 +20,7 @@ const { name } = defineProps<{ name: string }>();
 .avatar {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* сдвигаем всё содержимое к левому краю */
+  align-items: flex-start;
   gap: 24px;
   text-align: left;
 }
