@@ -1,0 +1,1 @@
+<template>Основная страница</template>

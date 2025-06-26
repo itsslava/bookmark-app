@@ -1,6 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import CompTest from './components/comp-test.vue';
-import CompTest2 from './components/comp-test-2.vue';
 
 export const router = createRouter({
   routes: [
@@ -10,8 +8,8 @@ export const router = createRouter({
       component: () => import('./views/main-view.vue'),
       name: 'main',
       children: [
-        { path: '', component: CompTest },
-        { path: 'new', component: CompTest2 },
+        { path: '', component: import('./views/index-view.vue') },
+        { path: ':alias', component: import('./views/category-view.vue') },
       ],
     },
   ],
