@@ -1,15 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import CompTest from './components/comp-test.vue';
 import CompTest2 from './components/comp-test-2.vue';
-import AuthView from './views/auth-view.vue';
-import MainView from './views/main-view.vue';
 
 export const router = createRouter({
   routes: [
-    { path: '/', component: AuthView },
+    { path: '/', component: () => import('./views/auth-view.vue') },
     {
       path: '/main',
-      component: MainView,
+      component: () => import('./views/main-view.vue'),
       name: 'main',
       children: [
         { path: '', component: CompTest },
