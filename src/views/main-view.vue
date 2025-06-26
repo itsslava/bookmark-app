@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import CategoriesList from '../components/categories-list.vue';
+import CategoryList from '../components/category-list.vue';
 import ProfileAvatar from '../components/profile-avatar.vue';
 </script>
 <template>
   <div class="app">
     <nav class="nav">
       <ProfileAvatar />
-      <CategoriesList />
+      <CategoryList />
     </nav>
     <main><RouterView /></main>
   </div>
