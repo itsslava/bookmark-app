@@ -21,7 +21,7 @@ import ProfileAvatar from '../components/profile-avatar.vue';
   /* margin: 140px auto 0 auto; */
 }
 .nav {
-  min-width: 400px;
+  min-width: 320px;
   display: flex;
   flex-direction: column;
   align-items: self-start;
