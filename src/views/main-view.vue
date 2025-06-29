@@ -8,7 +8,7 @@ import ProfileAvatar from '../components/profile-avatar.vue';
       <ProfileAvatar />
       <CategoryList />
     </nav>
-    <main><RouterView /></main>
+    <main class="main"><RouterView /></main>
   </div>
 </template>
 <style scoped>
@@ -26,5 +26,9 @@ import ProfileAvatar from '../components/profile-avatar.vue';
   flex-direction: column;
   align-items: self-start;
   gap: 36px;
+}
+
+.main {
+  width: 100%;
 }
 </style>
