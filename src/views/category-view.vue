@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import CategoryHeader from '@/components/category-header.vue';
 import type { Category } from '@/interfaces/category.interface';
 import { useBookmarkStore } from '@/stores/bookmark.store';
 import { useCategoryStore } from '@/stores/categories.store';
@@ -29,4 +30,4 @@ watch(
 );
 </script>
 
-<template>Категория: {{ category?.name }} {{ bookmarksStore.bookmarks?.length }}</template>
+<template><CategoryHeader v-if="category" :category="category" /></template>
