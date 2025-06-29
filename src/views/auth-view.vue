@@ -2,10 +2,21 @@
 import ButtonText from '../components/button-text.vue';
 import InputString from '@/components/input-string.vue';
 import { useAuthStore } from '@/stores/auth.store';
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+import { useRouter } from 'vue-router';
 
 const form = ref<{ email?: string; password?: string }>({});
 const authStore = useAuthStore();
+const router = useRouter();
+
+watch(
+  () => authStore.getToken,
+  () => {
+    if (authStore.getToken) {
+      router.push({ name: 'main' });
+    }
+  },
+);
 
 function submitForm(event: Event) {
   event.preventDefault();
