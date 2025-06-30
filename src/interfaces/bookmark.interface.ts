@@ -1,8 +1,8 @@
 export interface Bookmark {
   id: number;
-  categoryId: number;
+  category_id: number;
   url: string;
   title: string;
   image: string;
-  createdAt: Date;
+  created_at: Date;
 }
