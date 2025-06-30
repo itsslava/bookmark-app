@@ -34,7 +34,7 @@ function updateCategory() {
 
 function deleteCategory() {
   categoryStore.deleteCategory(category.id);
-  // confirm();
+  // confirm(`Вы уверены, что хотите удалить категорию ${category.name}?`);
   router.replace({ name: 'index' });
 }
 </script>
@@ -47,7 +47,7 @@ function deleteCategory() {
     </div>
     <div class="category-header_actions">
       <ButtonIcon v-if="!isEdited" @click="toggleEdit"><EditIcon /></ButtonIcon>
-      <ButtonIcon @click="deleteCategory"><DeleteIcon /></ButtonIcon>
+      <ButtonIcon @click="deleteCategory"><DeleteIcon width="14" height="14" /></ButtonIcon>
     </div>
   </div>
 </template>
@@ -56,6 +56,7 @@ function deleteCategory() {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .category-header_title {
